@@ -19,8 +19,10 @@
   <body>
     <header class="site-header">
       <nav class="nav container" aria-label="Navegacion principal">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <span class="brand-mark">L3D</span>
+          <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="brand-mark">
+            <img src="assets/llita-logo.jpg" alt="" />
+          </span>
           <span class="brand-name">Llita.3D</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
@@ -58,12 +60,12 @@
           <div class="hero-visual" aria-label="Vista creativa de productos 3D">
             <div class="product-orbit">
               <article class="floating-card medal">
-                <span class="card-icon">★</span>
+                <span class="card-icon">3D</span>
                 <strong>Medallas</strong>
                 <small>Eventos y deportes</small>
               </article>
               <article class="floating-card trophy">
-                <span class="card-icon">◆</span>
+                <span class="card-icon">L</span>
                 <strong>Trofeos</strong>
                 <small>Galardones a medida</small>
               </article>
@@ -135,29 +137,77 @@
         <div class="container">
           <div class="section-heading compact">
             <p class="eyebrow">Categorias</p>
-            <h2>Una base flexible para distintos estilos.</h2>
+            <h2>Elige una linea y mira su propio dashboard visual.</h2>
           </div>
           <div class="category-grid">
-            <article class="category-card theme-corporate">
+            <a class="category-card theme-corporate" href="#categoria-corporativo" data-category="corporativo">
               <h3>Corporativo</h3>
               <p>Negro y dorado para premios, regalos ejecutivos y presentaciones premium.</p>
-            </article>
-            <article class="category-card theme-sport">
+              <span>Ver dashboard</span>
+            </a>
+            <a class="category-card theme-sport" href="#categoria-deportivo" data-category="deportivo">
               <h3>Deportivo</h3>
               <p>Blanco y azul para medallas, torneos, clubes y eventos con energia limpia.</p>
-            </article>
-            <article class="category-card theme-event">
+              <span>Ver dashboard</span>
+            </a>
+            <a class="category-card theme-event" href="#categoria-eventos" data-category="eventos">
               <h3>Eventos</h3>
               <p>Recuerdos, acreditaciones, galardones y detalles para fechas especiales.</p>
-            </article>
-            <article class="category-card theme-custom">
+              <span>Ver dashboard</span>
+            </a>
+            <a class="category-card theme-custom" href="#categoria-personalizados" data-category="personalizados">
               <h3>Personalizados</h3>
               <p>Regalos, logos, nombres, frases y piezas disenadas desde una idea concreta.</p>
-            </article>
-            <article class="category-card theme-geek">
+              <span>Ver dashboard</span>
+            </a>
+            <a class="category-card theme-geek" href="#categoria-geek" data-category="geek">
               <h3>Geek / universitario</h3>
               <p>Colores vivos para comunidades, carreras, grupos, fandoms y proyectos creativos.</p>
-            </article>
+              <span>Ver dashboard</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section category-dashboard theme-corporate" id="categoria-corporativo" data-active-category="corporativo">
+        <div class="container dashboard-grid">
+          <div class="dashboard-main">
+            <a class="back-link" href="#categorias">Volver a categorias</a>
+            <p class="eyebrow dashboard-kicker">Dashboard de categoria</p>
+            <h2 id="dashboard-title">Corporativo</h2>
+            <p id="dashboard-copy">
+              Piezas sobrias y memorables para empresas, premiaciones, equipos y regalos ejecutivos.
+            </p>
+            <div class="dashboard-actions">
+              <a class="button dashboard-button" href="https://wa.me/56900000000?text=Hola%20Llita.3D,%20quiero%20cotizar%20un%20producto%203D" target="_blank" rel="noreferrer">
+                Cotizar esta linea
+              </a>
+              <a class="button dashboard-secondary" href="#galeria">Ver ejemplos</a>
+            </div>
+          </div>
+          <div class="dashboard-panel">
+            <div class="mini-logo">
+              <img src="assets/llita-logo.jpg" alt="Logo Llita.3D" />
+            </div>
+            <div class="metric-grid">
+              <article>
+                <strong id="dashboard-product-1">Galardones</strong>
+                <span>Producto foco</span>
+              </article>
+              <article>
+                <strong id="dashboard-product-2">Trofeos</strong>
+                <span>Ideal para</span>
+              </article>
+              <article>
+                <strong id="dashboard-product-3">NFC</strong>
+                <span>Extra posible</span>
+              </article>
+            </div>
+            <div class="dashboard-preview">
+              <span id="dashboard-tag-1">Premios internos</span>
+              <span id="dashboard-tag-2">Eventos de marca</span>
+              <span id="dashboard-tag-3">Reconocimientos</span>
+            </div>
           </div>
         </div>
       </section>
