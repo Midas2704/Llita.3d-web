@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=dark-20260620" />
+    <link rel="stylesheet" href="styles.css?v=dashboard-products-20260620" />
   </head>
   <body>
     <header class="site-header">
@@ -186,24 +186,28 @@
             </div>
           </div>
           <div class="dashboard-panel">
-            <div class="mini-logo">
+            <div class="dashboard-showcase" id="dashboard-showcase">
               <img src="assets/llita-logo.jpg" alt="Logo Llita.3D" />
+              <div class="showcase-copy">
+                <span id="showcase-kicker">Producto destacado</span>
+                <strong id="showcase-title">Galardon personalizado</strong>
+                <p id="showcase-copy">Una pieza con identidad para reconocer momentos, equipos o comunidades.</p>
+              </div>
             </div>
             <div class="metric-grid">
-              <article>
+              <button class="metric-card is-active" type="button" data-product-index="0">
                 <strong id="dashboard-product-1">Galardones</strong>
                 <span>Producto foco</span>
-              </article>
-              <article>
+              </button>
+              <button class="metric-card" type="button" data-product-index="1">
                 <strong id="dashboard-product-2">Trofeos</strong>
                 <span>Ideal para</span>
-              </article>
-              <article>
+              </button>
+              <button class="metric-card" type="button" data-product-index="2">
                 <strong id="dashboard-product-3">NFC</strong>
                 <span>Extra posible</span>
-              </article>
-            </div>
-            <div class="dashboard-preview">
+              </button>
+            </div>            <div class="dashboard-preview">
               <span id="dashboard-tag-1">Premios internos</span>
               <span id="dashboard-tag-2">Eventos de marca</span>
               <span id="dashboard-tag-3">Reconocimientos</span>
@@ -314,6 +318,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=dashboard-products-20260620"></script>
   </body>
 </html>
