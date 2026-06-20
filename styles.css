@@ -1,15 +1,15 @@
 :root {
-  --color-bg: #f7f4fa;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f0e3fb;
-  --color-text: #0a090b;
-  --color-muted: #5f5965;
+  --color-bg: #050406;
+  --color-surface: #111014;
+  --color-surface-soft: #1b1621;
+  --color-text: #ffffff;
+  --color-muted: #c7bdcf;
   --color-primary: #c48dea;
-  --color-primary-dark: #0a090b;
-  --color-primary-soft: #ead6fb;
+  --color-primary-dark: #ffffff;
+  --color-primary-soft: #291a34;
   --color-accent: #c48dea;
-  --color-border: #dfd6e8;
-  --shadow-soft: 0 24px 70px rgba(10, 9, 11, 0.14);
+  --color-border: #2c2434;
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.38);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 28px;
@@ -32,9 +32,9 @@ body {
   color: var(--color-text);
   overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(196, 141, 234, 0.22), transparent 31rem),
-    radial-gradient(circle at 88% 18%, rgba(10, 9, 11, 0.08), transparent 22rem),
-    linear-gradient(180deg, #fff 0%, var(--color-bg) 48%, #fff 100%);
+    radial-gradient(circle at top left, rgba(196, 141, 234, 0.26), transparent 31rem),
+    radial-gradient(circle at 88% 18%, rgba(196, 141, 234, 0.12), transparent 22rem),
+    linear-gradient(180deg, #070608 0%, var(--color-bg) 48%, #070608 100%);
 }
 
 a {
@@ -57,7 +57,7 @@ img {
 }
 
 .surface {
-  background: rgba(240, 227, 251, 0.58);
+  background: rgba(18, 14, 22, 0.96);
 }
 
 .site-header {
@@ -65,8 +65,8 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.86);
-  border-bottom: 1px solid rgba(223, 214, 232, 0.86);
+  background: rgba(5, 4, 6, 0.86);
+  border-bottom: 1px solid rgba(196, 141, 234, 0.18);
 }
 
 .nav {
@@ -92,9 +92,9 @@ img {
   height: 50px;
   border-radius: 16px;
   color: #fff;
-  background: #fff;
-  border: 2px solid var(--color-text);
-  box-shadow: 0 10px 28px rgba(10, 9, 11, 0.16);
+  background: #050406;
+  border: 1px solid rgba(196, 141, 234, 0.52);
+  box-shadow: 0 10px 28px rgba(196, 141, 234, 0.18);
   font-size: 0.82rem;
   overflow: hidden;
 }
@@ -250,7 +250,7 @@ h3 {
     radial-gradient(circle at 50% 38%, rgba(196, 141, 234, 0.28), transparent 14rem),
     linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(240, 227, 251, 0.82));
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(196, 141, 234, 0.22);
 }
 
 .hero-visual::before {
@@ -848,5 +848,103 @@ h3 {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* Dark brand direction overrides */
+.button.primary {
+  color: #050406;
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(255, 255, 255, 0.12);
+}
+
+.button.secondary {
+  color: #ffffff;
+  background: var(--color-primary-soft);
+  border: 1px solid rgba(196, 141, 234, 0.42);
+}
+
+.hero-visual {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(196, 141, 234, 0.3), transparent 15rem),
+    linear-gradient(150deg, rgba(15, 12, 18, 0.98), rgba(28, 21, 35, 0.96));
+  border: 1px solid rgba(196, 141, 234, 0.22);
+}
+
+.hero-visual::before {
+  inset: 64px;
+  border-radius: 28px;
+  background:
+    url("assets/llita-logo.jpg") center / contain no-repeat,
+    radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
+  filter: drop-shadow(0 22px 30px rgba(196, 141, 234, 0.16));
+  opacity: 0.88;
+}
+
+.floating-card {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.floating-card small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.card-icon {
+  color: #050406;
+  background: #ffffff;
+}
+
+.service-card,
+.category-card,
+.process-grid article,
+.about-card {
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.22);
+}
+
+.service-card span,
+.process-grid span {
+  color: #ffffff;
+  background: var(--color-primary-soft);
+}
+
+.theme-custom {
+  --category-bg: #110c16;
+  --category-bg-soft: #2b1838;
+  --category-border: #d6aef2;
+  --category-text: #ffffff;
+  --category-muted: #d9c5e8;
+  --category-pill: #c48dea;
+  --category-pill-text: #100812;
+}
+
+.about-card {
+  background:
+    linear-gradient(145deg, rgba(17, 16, 20, 0.96), rgba(36, 27, 45, 0.92)),
+    var(--color-surface);
+}
+
+.mini-logo {
+  background:
+    radial-gradient(circle at center, rgba(196, 141, 234, 0.16), transparent 62%),
+    rgba(0, 0, 0, 0.38);
+}
+
+.contact-card {
+  color: #050406;
+  background: #ffffff;
+}
+
+@media (max-width: 620px) {
+  .hero-visual::before {
+    inset: 22px;
+    border-radius: 18px;
+    background:
+      url("assets/llita-logo.jpg") center / min(245px, 76vw) auto no-repeat,
+      radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
+    filter: drop-shadow(0 14px 18px rgba(196, 141, 234, 0.12));
   }
 }
