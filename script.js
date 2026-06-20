@@ -9,6 +9,7 @@ const categoryContent = {
     title: "Corporativo",
     copy: "Piezas sobrias y memorables para empresas, premiaciones, equipos y regalos ejecutivos.",
     theme: "theme-corporate",
+    logo: "assets/llita-logo.jpg",
     products: [
       {
         title: "Galardones",
@@ -37,6 +38,7 @@ const categoryContent = {
     title: "Deportivo",
     copy: "Medallas, trofeos y recuerdos para clubes, torneos, corridas, ligas y actividades deportivas.",
     theme: "theme-sport",
+    logo: "assets/llita-logo.jpg",
     products: [
       {
         title: "Medallas",
@@ -65,6 +67,7 @@ const categoryContent = {
     title: "Eventos",
     copy: "Detalles fabricados para fechas especiales, celebraciones, acreditaciones, recuerdos y premiaciones.",
     theme: "theme-event",
+    logo: "assets/llita-logo.jpg",
     products: [
       {
         title: "Recuerdos",
@@ -93,6 +96,7 @@ const categoryContent = {
     title: "Personalizados",
     copy: "Objetos disenados desde nombres, logos, frases, ideas personales o referencias concretas.",
     theme: "theme-custom",
+    logo: "assets/llita-logo.jpg",
     products: [
       {
         title: "Llaveros",
@@ -121,6 +125,7 @@ const categoryContent = {
     title: "Geek / universitario",
     copy: "Productos con identidad para comunidades, carreras, grupos, fandoms y proyectos tecnologicos.",
     theme: "theme-geek",
+    logo: "assets/llita-logo.jpg",
     products: [
       {
         title: "Insignias",
@@ -200,6 +205,12 @@ function showCategoryDashboard(category, productIndex = 0) {
   );
   dashboard.classList.add(content.theme, "is-visible");
   dashboard.dataset.activeCategory = category;
+
+  const showcaseLogo = document.querySelector("#dashboard-showcase img");
+  if (showcaseLogo) {
+    showcaseLogo.src = content.logo || "assets/llita-logo.jpg";
+    showcaseLogo.alt = "Logo Llita.3D " + content.title;
+  }
 
   setText("#dashboard-title", content.title);
   setText("#dashboard-copy", content.copy);

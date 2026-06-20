@@ -1108,3 +1108,64 @@ h3 {
     padding: 20px;
   }
 }
+
+/* Logo positioning and category logo preparation */
+:root {
+  --logo-main: url("assets/llita-logo.jpg");
+  --logo-visual-y: 43%;
+}
+
+.brand-mark img {
+  object-position: center var(--logo-visual-y);
+  transform: scale(1.16) translateY(-3%);
+}
+
+.hero-visual::before {
+  background-image:
+    var(--logo-main),
+    radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
+  background-position: center var(--logo-visual-y), center;
+  background-size: contain, auto;
+  background-repeat: no-repeat;
+}
+
+.dashboard-showcase img {
+  object-fit: contain;
+  object-position: center var(--logo-visual-y);
+  transform: translateY(-56%) scale(1.16);
+  transform-origin: center;
+}
+
+.theme-corporate {
+  --category-logo: url("assets/llita-logo.jpg");
+}
+
+.theme-sport {
+  --category-logo: url("assets/llita-logo.jpg");
+}
+
+.theme-event {
+  --category-logo: url("assets/llita-logo.jpg");
+}
+
+.theme-custom {
+  --category-logo: url("assets/llita-logo.jpg");
+}
+
+.theme-geek {
+  --category-logo: url("assets/llita-logo.jpg");
+}
+
+@media (max-width: 620px) {
+  .hero-visual::before {
+    background-image:
+      var(--logo-main),
+      radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
+    background-position: center var(--logo-visual-y), center;
+    background-size: min(245px, 76vw) auto, auto;
+  }
+
+  .dashboard-showcase img {
+    transform: translateY(-57%) scale(1.12);
+  }
+}
