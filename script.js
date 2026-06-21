@@ -152,6 +152,32 @@ const categoryContent = {
   },
 };
 
+const galleryContent = {
+  default: {
+    title: "Espacio listo para tus trabajos reales.",
+    items: ["Medalla personalizada", "Trofeo premium", "Llavero con logo", "Producto NFC", "Pieza a pedido"],
+  },
+  corporativo: {
+    title: "Ejemplos para empresas, equipos y reconocimientos.",
+    items: ["Galardon ejecutivo", "Trofeo corporativo", "Reconocimiento con logo", "Producto NFC de marca", "Regalo institucional"],
+  },
+  deportivo: {
+    title: "Ejemplos para torneos, clubes y premiaciones deportivas.",
+    items: ["Medalla de torneo", "Trofeo de campeonato", "Serie por categoria", "Premio MVP", "Recuerdo de club"],
+  },
+  eventos: {
+    title: "Ejemplos para celebraciones, acreditaciones y recuerdos.",
+    items: ["Recuerdo de evento", "Acreditacion personalizada", "Regalo conmemorativo", "Placa para invitados", "Detalle de celebracion"],
+  },
+  personalizados: {
+    title: "Ejemplos de objetos personalizados a pedido.",
+    items: ["Llavero con nombre", "Pieza a medida", "Regalo unico", "Logo impreso en 3D", "Objeto decorativo"],
+  },
+  geek: {
+    title: "Ejemplos para comunidad geek, universidad y grupos.",
+    items: ["Insignia de comunidad", "Prop geek", "Merch universitario", "Token de grupo", "Placa tecnologica"],
+  },
+};
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -169,6 +195,13 @@ function setText(selector, text) {
   if (element) element.textContent = text;
 }
 
+function updateGallery(category) {
+  const content = galleryContent[category] || galleryContent.default;
+  setText("#gallery-title", content.title);
+  content.items.forEach((item, index) => {
+    setText(`#gallery-item-${index + 1}`, item);
+  });
+}
 function setActiveProduct(content, productIndex = 0) {
   const product = content.products[productIndex] || content.products[0];
   const showcase = document.querySelector("#dashboard-showcase");
@@ -205,6 +238,7 @@ function showCategoryDashboard(category, productIndex = 0) {
   );
   dashboard.classList.add(content.theme, "is-visible");
   dashboard.dataset.activeCategory = category;
+  updateGallery(category);
 
   const showcaseLogo = document.querySelector("#dashboard-showcase img");
   if (showcaseLogo) {
