@@ -152,7 +152,75 @@ const categoryContent = {
     ],
   },
 };
+const defaultGalleryContent = {
+  kicker: "Galeria",
+  title: "Espacio listo para tus trabajos reales.",
+  items: [
+    "Medalla personalizada",
+    "Trofeo premium",
+    "Llavero con logo",
+    "Producto NFC",
+    "Pieza a pedido",
+  ],
+};
 
+const categoryGalleryContent = {
+  corporativo: {
+    kicker: "Galeria corporativa",
+    title: "Ejemplos pensados para marcas, equipos y reconocimientos.",
+    items: [
+      "Galardon con logo",
+      "Trofeo ejecutivo",
+      "Placa de reconocimiento",
+      "Producto NFC corporativo",
+      "Regalo para equipo",
+    ],
+  },
+  deportivo: {
+    kicker: "Galeria deportiva",
+    title: "Piezas para torneos, clubes, podios y temporadas.",
+    items: [
+      "Medalla de campeonato",
+      "Trofeo de podio",
+      "Llavero de club",
+      "Serie por categoria",
+      "Premio MVP",
+    ],
+  },
+  eventos: {
+    kicker: "Galeria de eventos",
+    title: "Detalles para celebraciones, recuerdos y acreditaciones.",
+    items: [
+      "Recuerdo con fecha",
+      "Acreditacion personalizada",
+      "Regalo para invitados",
+      "Souvenir con logo",
+      "Premio conmemorativo",
+    ],
+  },
+  personalizados: {
+    kicker: "Galeria personalizada",
+    title: "Ideas a medida para regalos, nombres, logos y piezas unicas.",
+    items: [
+      "Llavero con nombre",
+      "Pieza a pedido",
+      "Regalo personalizado",
+      "Producto NFC personal",
+      "Logo en 3D",
+    ],
+  },
+  geek: {
+    kicker: "Galeria geek y universitaria",
+    title: "Objetos para comunidades, carreras, grupos y cultura pop.",
+    items: [
+      "Insignia de comunidad",
+      "Prop decorativo",
+      "Merch universitario",
+      "Token de grupo",
+      "Placa geek",
+    ],
+  },
+};
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -177,6 +245,14 @@ function updateGalleryTheme(theme, category) {
   if (theme) gallerySection.classList.add(theme);
 }
 
+function updateGalleryContent(category) {
+  const gallery = categoryGalleryContent[category] || defaultGalleryContent;
+  setText("#gallery-kicker", gallery.kicker);
+  setText("#gallery-title", gallery.title);
+  gallery.items.forEach((item, index) => {
+    setText(`#gallery-item-${index + 1}`, item);
+  });
+}
 function setActiveProduct(content, productIndex = 0) {
   const product = content.products[productIndex] || content.products[0];
   const showcase = document.querySelector("#dashboard-showcase");
@@ -214,6 +290,7 @@ function showCategoryDashboard(category, productIndex = 0) {
   dashboard.classList.add(content.theme, "is-visible");
   dashboard.dataset.activeCategory = category;
   updateGalleryTheme(content.theme, category);
+  updateGalleryContent(category);
 
   const showcaseLogo = document.querySelector("#dashboard-showcase img");
   if (showcaseLogo) {
