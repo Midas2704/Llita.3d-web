@@ -170,9 +170,10 @@ function setText(selector, text) {
   if (element) element.textContent = text;
 }
 
-function updateGalleryTheme(theme) {
+function updateGalleryTheme(theme, category) {
   if (!gallerySection) return;
   gallerySection.classList.remove("theme-corporate", "theme-sport", "theme-event", "theme-custom", "theme-geek");
+  gallerySection.dataset.galleryTheme = category || "default";
   if (theme) gallerySection.classList.add(theme);
 }
 
@@ -212,7 +213,7 @@ function showCategoryDashboard(category, productIndex = 0) {
   );
   dashboard.classList.add(content.theme, "is-visible");
   dashboard.dataset.activeCategory = category;
-  updateGalleryTheme(content.theme);
+  updateGalleryTheme(content.theme, category);
 
   const showcaseLogo = document.querySelector("#dashboard-showcase img");
   if (showcaseLogo) {

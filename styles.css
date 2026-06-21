@@ -1219,3 +1219,67 @@ h3 {
     linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.68)),
     linear-gradient(135deg, color-mix(in srgb, var(--category-pill) 78%, #000), var(--category-bg-soft));
 }
+
+/* Stronger gallery category palette */
+.gallery-section[data-gallery-theme] {
+  position: relative;
+  border-top: 1px solid var(--category-border);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--category-pill) 28%, transparent);
+}
+
+.gallery-section[data-gallery-theme]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--category-pill);
+}
+
+.gallery-section[data-gallery-theme="corporativo"] {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(215, 170, 66, 0.24), transparent 24rem),
+    linear-gradient(135deg, #090909, #21180d);
+}
+
+.gallery-section[data-gallery-theme="deportivo"] {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(13, 111, 209, 0.22), transparent 24rem),
+    linear-gradient(135deg, #f8fcff, #dbeeff);
+}
+
+.gallery-section[data-gallery-theme="eventos"] {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 139, 43, 0.24), transparent 24rem),
+    linear-gradient(135deg, #fff8f0, #ffe1c2);
+}
+
+.gallery-section[data-gallery-theme="personalizados"] {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(196, 141, 234, 0.22), transparent 24rem),
+    linear-gradient(135deg, #110c16, #2b1838);
+}
+
+.gallery-section[data-gallery-theme="geek"] {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(44, 224, 255, 0.22), transparent 24rem),
+    linear-gradient(135deg, #061a1f, #10333d);
+}
+
+.gallery-section[data-gallery-theme] .gallery-item {
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+.gallery-section[data-gallery-theme="deportivo"] .gallery-item,
+.gallery-section[data-gallery-theme="eventos"] .gallery-item {
+  color: var(--category-text);
+  background:
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.52)),
+    linear-gradient(135deg, color-mix(in srgb, var(--category-pill) 64%, #fff), #ffffff);
+}
+
+.gallery-section[data-gallery-theme="deportivo"] .gallery-item span,
+.gallery-section[data-gallery-theme="eventos"] .gallery-item span {
+  color: var(--category-text);
+}
