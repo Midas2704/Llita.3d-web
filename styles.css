@@ -259,7 +259,7 @@ h3 {
   inset: 54px;
   border-radius: 42%;
   background:
-    url("assets/llita-logo.jpg") center / contain no-repeat,
+    url("assets/logo-main.jpg") center / contain no-repeat,
     radial-gradient(circle, rgba(196, 141, 234, 0.24), transparent 58%);
   filter: drop-shadow(0 22px 30px rgba(10, 9, 11, 0.16));
 }
@@ -809,7 +809,7 @@ h3 {
     inset: 22px;
     border-radius: 18px;
     background:
-      url("assets/llita-logo.jpg") center / min(245px, 76vw) auto no-repeat,
+      url("assets/logo-main.jpg") center / min(245px, 76vw) auto no-repeat,
       radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
     filter: drop-shadow(0 14px 18px rgba(10, 9, 11, 0.12));
   }
@@ -875,7 +875,7 @@ h3 {
   inset: 64px;
   border-radius: 28px;
   background:
-    url("assets/llita-logo.jpg") center / contain no-repeat,
+    url("assets/logo-main.jpg") center / contain no-repeat,
     radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
   filter: drop-shadow(0 22px 30px rgba(196, 141, 234, 0.16));
   opacity: 0.88;
@@ -943,7 +943,7 @@ h3 {
     inset: 22px;
     border-radius: 18px;
     background:
-      url("assets/llita-logo.jpg") center / min(245px, 76vw) auto no-repeat,
+      url("assets/logo-main.jpg") center / min(245px, 76vw) auto no-repeat,
       radial-gradient(circle, rgba(196, 141, 234, 0.18), transparent 58%);
     filter: drop-shadow(0 14px 18px rgba(196, 141, 234, 0.12));
   }
@@ -1111,7 +1111,7 @@ h3 {
 
 /* Logo positioning and category logo preparation */
 :root {
-  --logo-main: url("assets/llita-logo.jpg");
+  --logo-main: url("assets/logo-main.jpg");
   --logo-visual-y: 43%;
 }
 
@@ -1137,23 +1137,23 @@ h3 {
 }
 
 .theme-corporate {
-  --category-logo: url("assets/llita-logo.jpg");
+  --category-logo: url("assets/logo-corporativo.jpg");
 }
 
 .theme-sport {
-  --category-logo: url("assets/llita-logo.jpg");
+  --category-logo: url("assets/logo-main.jpg");
 }
 
 .theme-event {
-  --category-logo: url("assets/llita-logo.jpg");
+  --category-logo: url("assets/logo-main.jpg");
 }
 
 .theme-custom {
-  --category-logo: url("assets/llita-logo.jpg");
+  --category-logo: url("assets/logo-main.jpg");
 }
 
 .theme-geek {
-  --category-logo: url("assets/llita-logo.jpg");
+  --category-logo: url("assets/logo-main.jpg");
 }
 
 @media (max-width: 620px) {
@@ -1169,3 +1169,10 @@ h3 {
     transform: translateY(-57%) scale(1.12);
   }
 }
+
+/* Category logo assets */
+.theme-corporate { --category-logo: url("assets/logo-corporativo.jpg"); }
+.theme-sport { --category-logo: url("assets/logo-deportivo.jpg"); }
+.theme-event { --category-logo: url("assets/logo-eventos.jpg"); }
+.theme-custom { --category-logo: url("assets/logo-personalizados.jpg"); }
+.theme-geek { --category-logo: url("assets/logo-geek.jpg"); }
