@@ -1176,3 +1176,46 @@ h3 {
 .theme-event { --category-logo: url("assets/logo-eventos.jpg"); }
 .theme-custom { --category-logo: url("assets/logo-personalizados.jpg"); }
 .theme-geek { --category-logo: url("assets/logo-geek.jpg"); }
+
+/* Gallery keeps content, but adopts active category palette */
+.gallery-section {
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.gallery-section.theme-corporate,
+.gallery-section.theme-sport,
+.gallery-section.theme-event,
+.gallery-section.theme-custom,
+.gallery-section.theme-geek {
+  color: var(--category-text);
+  background:
+    radial-gradient(circle at 78% 12%, color-mix(in srgb, var(--category-pill) 28%, transparent), transparent 22rem),
+    linear-gradient(135deg, var(--category-bg), var(--category-bg-soft));
+}
+
+.gallery-section.theme-corporate .eyebrow,
+.gallery-section.theme-sport .eyebrow,
+.gallery-section.theme-event .eyebrow,
+.gallery-section.theme-custom .eyebrow,
+.gallery-section.theme-geek .eyebrow {
+  color: var(--category-pill);
+}
+
+.gallery-section.theme-corporate h2,
+.gallery-section.theme-sport h2,
+.gallery-section.theme-event h2,
+.gallery-section.theme-custom h2,
+.gallery-section.theme-geek h2 {
+  color: var(--category-text);
+}
+
+.gallery-section.theme-corporate .gallery-item,
+.gallery-section.theme-sport .gallery-item,
+.gallery-section.theme-event .gallery-item,
+.gallery-section.theme-custom .gallery-item,
+.gallery-section.theme-geek .gallery-item {
+  border: 1px solid var(--category-border);
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.68)),
+    linear-gradient(135deg, color-mix(in srgb, var(--category-pill) 78%, #000), var(--category-bg-soft));
+}
