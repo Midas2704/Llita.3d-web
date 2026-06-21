@@ -1283,3 +1283,109 @@ h3 {
 .gallery-section[data-gallery-theme="eventos"] .gallery-item span {
   color: var(--category-text);
 }
+
+/* Hero floating product cards with image placeholders */
+.floating-card {
+  grid-template-columns: 74px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: min(250px, 64vw);
+  padding: 14px;
+}
+
+.floating-card-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.floating-card-copy strong,
+.floating-card-copy small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.card-example {
+  position: relative;
+  width: 74px;
+  height: 58px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(196, 141, 234, 0.18);
+  box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.12);
+}
+
+.card-example::before,
+.card-example::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.example-medal {
+  background:
+    radial-gradient(circle at 30% 54%, #c48dea 0 18px, transparent 19px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(196, 141, 234, 0.18));
+}
+
+.example-medal::before {
+  width: 34px;
+  height: 10px;
+  left: 20px;
+  top: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  transform: rotate(-12deg);
+}
+
+.example-trophy {
+  background:
+    linear-gradient(180deg, transparent 0 12px, rgba(255, 255, 255, 0.78) 12px 24px, transparent 24px),
+    radial-gradient(circle at 50% 58%, #c48dea 0 20px, transparent 21px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(196, 141, 234, 0.16));
+}
+
+.example-trophy::before {
+  width: 40px;
+  height: 16px;
+  left: 17px;
+  bottom: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.example-nfc {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(196, 141, 234, 0.22));
+}
+
+.example-nfc::before {
+  inset: 13px 17px;
+  border: 3px solid rgba(10, 9, 11, 0.58);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  background: transparent;
+  transform: rotate(45deg);
+}
+
+.example-nfc::after {
+  width: 8px;
+  height: 8px;
+  left: 32px;
+  top: 25px;
+  background: rgba(10, 9, 11, 0.72);
+}
+
+@media (max-width: 620px) {
+  .floating-card {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card-example {
+    width: 56px;
+    height: 44px;
+    border-radius: 12px;
+  }
+}
