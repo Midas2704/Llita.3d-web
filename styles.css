@@ -1389,3 +1389,33 @@ h3 {
     border-radius: 12px;
   }
 }
+
+/* Real images for hero floating cards */
+.card-example {
+  background: rgba(196, 141, 234, 0.12);
+}
+
+.card-example img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.card-example::before,
+.card-example::after {
+  content: none;
+}
+
+.example-medal img {
+  object-position: 48% 58%;
+}
+
+.example-trophy img {
+  object-position: 52% 58%;
+}
+
+.example-nfc img {
+  object-position: 52% 58%;
+}
