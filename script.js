@@ -151,8 +151,8 @@ const categoryContent = {
     ],
   },
   personalizados: {
-    title: "Personalizados",
-    copy: "Objetos disenados desde nombres, logos, frases, ideas personales o referencias concretas.",
+    title: "Regalos personalizados",
+    copy: "Nombres, frases, logos y piezas especiales pensadas para sorprender o recordar algo importante.",
     theme: "theme-custom",
     logo: "assets/logo-personalizados.jpg",
     products: [
@@ -180,8 +180,8 @@ const categoryContent = {
     ],
   },
   geek: {
-    title: "Geek / universitario",
-    copy: "Productos con identidad para comunidades, carreras, grupos, fandoms y proyectos tecnologicos.",
+    title: "Geek y comunidades",
+    copy: "Productos para carreras, clubes, fandoms, grupos y proyectos con identidad propia.",
     theme: "theme-geek",
     logo: "assets/logo-geek.jpg",
     products: [
