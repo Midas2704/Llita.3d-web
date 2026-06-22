@@ -656,33 +656,25 @@ h3 {
 
 .contact-card {
   padding: 42px 36px;
-  background: linear-gradient(145deg, #ffffff, #f8f5fc);
+  background: #f4ecfc;
   border: 1px solid rgba(196, 141, 234, 0.3);
   border-radius: var(--radius-lg);
   box-shadow: 0 24px 54px rgba(10, 9, 11, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
   color: #050406;
 }
 
-.contact-card-prompt {
-  margin: 0 0 20px !important;
-  color: #050406 !important;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-align: center;
-}
-
 .button.whatsapp-btn {
-  background: #25d366;
+  background: #a977de;
   color: #ffffff;
   font-size: 1.1rem;
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+  box-shadow: 0 12px 28px rgba(169, 119, 222, 0.28);
   gap: 12px;
   min-height: 54px;
 }
 
 .button.whatsapp-btn:hover {
-  background: #20bd5a;
-  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.36);
+  background: #9b62d6;
+  box-shadow: 0 16px 34px rgba(169, 119, 222, 0.36);
   color: #ffffff;
 }
 
