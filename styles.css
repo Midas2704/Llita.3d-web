@@ -1474,3 +1474,10 @@ h3 {
     height: 54px;
   }
 }
+
+/* Que hacemos product summary */
+.section-lead .product-line {
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
