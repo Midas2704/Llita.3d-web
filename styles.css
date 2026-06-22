@@ -1970,3 +1970,108 @@ h3 {
     opacity: 0.52;
   }
 }
+
+/* About brand section stronger editorial redesign */
+.about {
+  place-items: stretch;
+}
+
+.about-brand-card {
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  min-height: 520px;
+  padding: clamp(34px, 6vw, 72px);
+  border-color: rgba(196, 141, 234, 0.32);
+  background:
+    radial-gradient(circle at 86% 48%, rgba(196, 141, 234, 0.24), transparent 25rem),
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.06), transparent 18rem),
+    linear-gradient(135deg, #0d0911 0%, #181020 46%, #261634 100%);
+}
+
+.about-brand-card::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 30px;
+  height: 84px;
+  opacity: 0.2;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(196, 141, 234, 0.18) 0 1px,
+    transparent 1px 13px
+  );
+  mask-image: linear-gradient(90deg, #000, transparent 68%);
+  pointer-events: none;
+}
+
+.about-brand-card::after {
+  content: none;
+}
+
+.about-copy {
+  align-content: center;
+  max-width: 660px;
+}
+
+.about-copy h2 {
+  max-width: 620px;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.98;
+}
+
+.about-copy p:not(.eyebrow) {
+  font-size: clamp(1.03rem, 1.4vw, 1.18rem);
+}
+
+.about-signature {
+  margin-top: 8px;
+  color: #ead8ff !important;
+}
+
+.about-logo-mark {
+  min-height: 420px;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.about-logo-mark::before {
+  inset: 2% 0;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(196, 141, 234, 0.34), transparent 58%);
+  filter: blur(22px);
+}
+
+.about-logo-mark img {
+  width: min(520px, 116%);
+  max-height: none;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 34px 54px rgba(196, 141, 234, 0.26))
+    saturate(1.08)
+    blur(0.15px);
+  transform: scale(1.08) translateX(2%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 54%, rgba(0, 0, 0, 0.72) 72%, transparent 100%);
+}
+
+@media (max-width: 760px) {
+  .about-brand-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 30px 22px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(2.1rem, 12vw, 3.4rem);
+  }
+
+  .about-logo-mark {
+    min-height: 260px;
+  }
+
+  .about-logo-mark img {
+    width: min(340px, 92vw);
+    opacity: 0.62;
+    transform: scale(1.03);
+  }
+}
