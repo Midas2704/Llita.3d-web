@@ -4,7 +4,64 @@ const dashboard = document.querySelector(".category-dashboard");
 const categoryCards = document.querySelectorAll("[data-category]");
 const gallerySection = document.querySelector("#galeria");
 const metricCards = document.querySelectorAll("[data-product-index]");
+const productList = document.querySelector("#product-list");
 
+const productAccordionItems = [
+  {
+    title: "Medallas personalizadas",
+    summary: "Para corridas, torneos y celebraciones.",
+    description:
+      "Diseñamos medallas para corridas, torneos, actividades escolares, celebraciones y eventos especiales. Podemos trabajar desde un logo, una temática, una referencia o una idea inicial.",
+    customizable: ["Forma y tamaño", "Logo o escudo", "Fecha y categoría", "Colores y detalles del evento"],
+    imageLabel: "Imagen placeholder: medalla personalizada",
+    imageTone: "medallas",
+  },
+  {
+    title: "Trofeos y galardones",
+    summary: "Premios con identidad para reconocer logros.",
+    description:
+      "Creamos premios personalizados para reconocimientos deportivos, corporativos, institucionales o celebraciones especiales.",
+    customizable: ["Nombre del premio", "Logo", "Categoría", "Fecha", "Colores y formato"],
+    imageLabel: "Imagen placeholder: trofeo o galardón",
+    imageTone: "trofeos",
+  },
+  {
+    title: "Llaveros y recuerdos",
+    summary: "Objetos pequeños para regalar o recordar.",
+    description:
+      "Diseñamos objetos pequeños para regalar, recordar una fecha especial, representar una marca o crear merchandising.",
+    customizable: ["Nombres", "Frases", "Logos", "Colores", "Formas y empaques"],
+    imageLabel: "Imagen placeholder: llavero o recuerdo",
+    imageTone: "llaveros",
+  },
+  {
+    title: "Productos con NFC",
+    summary: "Objetos que conectan perfiles, menús, portafolios, formularios o sitios.",
+    description:
+      "Creamos tarjetas, llaveros y objetos con tecnología NFC para conectar información física con perfiles, menús, portafolios, formularios o sitios web.",
+    customizable: ["Enlace de destino", "Diseño exterior", "Logo", "Formato y colores"],
+    imageLabel: "Imagen placeholder: producto NFC",
+    imageTone: "nfc",
+  },
+  {
+    title: "Piezas a pedido",
+    summary: "Modelado, adaptación e impresión de piezas funcionales, decorativas o especiales.",
+    description:
+      "Modelamos, adaptamos e imprimimos piezas funcionales, decorativas o especiales según una necesidad concreta.",
+    customizable: ["Medidas", "Material", "Color", "Forma", "Función y detalles específicos"],
+    imageLabel: "Imagen placeholder: pieza a pedido",
+    imageTone: "piezas",
+  },
+  {
+    title: "Proyectos para comunidades",
+    summary: "Productos para clubes, carreras, grupos y proyectos con identidad propia.",
+    description:
+      "Creamos productos para clubes, carreras, grupos, fandoms, comunidades universitarias y proyectos con identidad propia.",
+    customizable: ["Logos", "Colores", "Nombres", "Símbolos", "Temática y tipo de producto"],
+    imageLabel: "Imagen placeholder: proyecto para comunidad",
+    imageTone: "comunidades",
+  },
+];
 const categoryContent = {
   corporativo: {
     title: "Corporativo",
@@ -221,6 +278,68 @@ const categoryGalleryContent = {
     ],
   },
 };
+function createProductPanel(item, index) {
+  const number = String(index + 1).padStart(2, "0");
+  const panelId = `product-panel-${number}`;
+  const customItems = item.customizable.map((entry) => `<li>${entry}</li>`).join("");
+  const quoteText = encodeURIComponent(`Hola Llita.3D, quiero cotizar: ${item.title}`);
+
+  return `
+    <article class="product-item" data-product-item>
+      <button class="product-row" type="button" aria-expanded="false" aria-controls="${panelId}">
+        <span class="product-number">${number}</span>
+        <span class="product-copy">
+          <span class="product-title">${item.title}</span>
+          <span class="product-summary">${item.summary}</span>
+        </span>
+        <span class="product-arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="product-panel" id="${panelId}">
+        <div class="product-panel-inner">
+          <div class="product-panel-copy">
+            <p>${item.description}</p>
+            <div>
+              <h4>Personalizable en</h4>
+              <ul>${customItems}</ul>
+            </div>
+            <div class="product-panel-actions">
+              <a class="button secondary" href="#galeria">Ver ejemplos</a>
+              <a class="button primary" href="https://wa.me/56999327096?text=${quoteText}" target="_blank" rel="noreferrer">Cotizar este producto</a>
+            </div>
+          </div>
+          <figure class="product-panel-image image-tone-${item.imageTone}">
+            <span>${item.imageLabel}</span>
+          </figure>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function closeProductItem(item) {
+  const button = item.querySelector(".product-row");
+  item.classList.remove("is-open");
+  button?.setAttribute("aria-expanded", "false");
+}
+
+function initProductAccordion() {
+  if (!productList) return;
+  productList.innerHTML = productAccordionItems.map(createProductPanel).join("");
+
+  productList.querySelectorAll("[data-product-item]").forEach((item) => {
+    const button = item.querySelector(".product-row");
+    button?.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
+      productList.querySelectorAll("[data-product-item]").forEach(closeProductItem);
+      if (!isOpen) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+}
+initProductAccordion();
+
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
