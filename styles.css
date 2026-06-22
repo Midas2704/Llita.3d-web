@@ -2075,3 +2075,78 @@ h3 {
     transform: scale(1.03);
   }
 }
+
+/* Compact about brand scale */
+.about-brand-card {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+  min-height: 380px;
+  padding: clamp(28px, 4.2vw, 50px);
+  gap: clamp(24px, 4vw, 46px);
+}
+
+.about-brand-card::before {
+  left: 28px;
+  right: 42%;
+  bottom: 24px;
+  height: 58px;
+  opacity: 0.14;
+}
+
+.about-copy {
+  gap: 14px;
+  max-width: 640px;
+}
+
+.about-copy h2 {
+  max-width: 680px;
+  font-size: clamp(2rem, 3.4vw, 3.35rem);
+  line-height: 1.04;
+}
+
+.about-copy p:not(.eyebrow) {
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.68;
+}
+
+.about-signature {
+  margin-top: 4px;
+}
+
+.about-logo-mark {
+  min-height: 285px;
+  padding: 18px;
+}
+
+.about-logo-mark::before {
+  inset: 12% 8%;
+  filter: blur(18px);
+  opacity: 0.78;
+}
+
+.about-logo-mark img {
+  width: min(330px, 92%);
+  opacity: 0.48;
+  transform: scale(1) translateX(0);
+}
+
+@media (max-width: 760px) {
+  .about-brand-card {
+    min-height: auto;
+    padding: 28px 20px;
+    gap: 18px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .about-logo-mark {
+    min-height: 190px;
+    padding: 8px;
+  }
+
+  .about-logo-mark img {
+    width: min(240px, 78vw);
+    opacity: 0.5;
+  }
+}
