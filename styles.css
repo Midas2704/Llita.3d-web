@@ -1490,3 +1490,62 @@ h3 {
   font-size: 1.05rem;
   line-height: 1.55;
 }
+
+/* Product cards subtle 3D polish */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(196, 141, 234, 0.24);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 16px 16px auto;
+  width: 58px;
+  height: 58px;
+  opacity: 0.16;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(255, 255, 255, 0.28) 49% 51%, transparent 52%),
+    linear-gradient(30deg, rgba(196, 141, 234, 0.85), rgba(255, 255, 255, 0.18));
+  transform: rotate(45deg) skew(-8deg, -8deg);
+  pointer-events: none;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 9px,
+    rgba(196, 141, 234, 0.2) 10px,
+    transparent 11px
+  );
+  pointer-events: none;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(196, 141, 234, 0.52);
+  background: linear-gradient(180deg, rgba(196, 141, 234, 0.08), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 18px 42px rgba(196, 141, 234, 0.13), 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.service-card:hover span {
+  color: #ffffff;
+  background: #c48dea;
+  box-shadow: 0 10px 24px rgba(196, 141, 234, 0.26);
+}
