@@ -656,11 +656,11 @@ h3 {
 
 .contact-card {
   padding: 42px 36px;
-  background: linear-gradient(145deg, #F9F6FC, #EBE1F5);
-  border: 1px solid rgba(196, 141, 234, 0.3);
+  background: linear-gradient(145deg, #2b1b3d, #140d1c);
+  border: 1px solid rgba(196, 141, 234, 0.25);
   border-radius: var(--radius-lg);
-  box-shadow: 0 24px 54px rgba(10, 9, 11, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-  color: #050406;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(196, 141, 234, 0.1);
+  color: #ffffff;
 }
 
 .button.whatsapp-btn {
@@ -688,7 +688,7 @@ h3 {
   flex-direction: column;
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-item {
@@ -697,7 +697,7 @@ h3 {
   gap: 16px;
   padding: 18px 0;
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .contact-item:last-child {
@@ -713,7 +713,7 @@ h3 {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-  color: rgba(5, 4, 6, 0.35);
+  color: rgba(196, 141, 234, 0.5);
   transition: color 200ms ease;
 }
 
@@ -731,13 +731,13 @@ a.contact-item:hover .contact-icon {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(5, 4, 6, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .contact-info strong {
   font-size: 1rem;
   font-weight: 600;
-  color: #050406;
+  color: #ffffff;
   line-height: 1.45;
 }
 
