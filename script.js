@@ -395,6 +395,25 @@ function setActiveProduct(content, productIndex = 0) {
   }
 }
 
+function updateGalleryFilters(category) {
+  const filters = document.querySelectorAll(".gallery-filter-btn");
+  filters.forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.filter === (category || "all"));
+  });
+}
+
+function closeCategoryDashboard() {
+  if (dashboard) {
+    dashboard.classList.remove("is-visible", "theme-corporate", "theme-sport", "theme-event", "theme-custom", "theme-geek");
+    delete dashboard.dataset.activeCategory;
+  }
+  categoryCards.forEach(c => c.classList.remove("is-active"));
+  updateGalleryTheme(null, null);
+  updateGalleryContent("default");
+  updateGalleryFilters("all");
+  window.history.pushState(null, "", window.location.pathname + window.location.search);
+}
+
 function showCategoryDashboard(category, productIndex = 0) {
   const content = categoryContent[category];
   if (!dashboard || !content) return;
@@ -408,8 +427,14 @@ function showCategoryDashboard(category, productIndex = 0) {
   );
   dashboard.classList.add(content.theme, "is-visible");
   dashboard.dataset.activeCategory = category;
+
+  categoryCards.forEach(c => {
+    c.classList.toggle("is-active", c.dataset.category === category);
+  });
+
   updateGalleryTheme(content.theme, category);
   updateGalleryContent(category);
+  updateGalleryFilters(category);
 
   const showcaseLogo = document.querySelector("#dashboard-showcase img");
   if (showcaseLogo) {
@@ -427,12 +452,38 @@ function showCategoryDashboard(category, productIndex = 0) {
   setActiveProduct(content, productIndex);
 }
 
+const closeDashboardBtn = document.querySelector(".close-dashboard-btn");
+if (closeDashboardBtn) {
+  closeDashboardBtn.addEventListener("click", () => {
+    closeCategoryDashboard();
+    document.querySelector("#categorias")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+const galleryFilters = document.querySelectorAll(".gallery-filter-btn");
+galleryFilters.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+    if (filter === "all") {
+      closeCategoryDashboard();
+    } else {
+      showCategoryDashboard(filter);
+      window.history.pushState(null, "", `#categoria-${filter}`);
+    }
+  });
+});
+
 categoryCards.forEach((card) => {
   card.addEventListener("click", (event) => {
     event.preventDefault();
-    showCategoryDashboard(card.dataset.category);
-    window.history.pushState(null, "", `#categoria-${card.dataset.category}`);
-    dashboard?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const category = card.dataset.category;
+    if (dashboard?.dataset.activeCategory === category) {
+      closeCategoryDashboard();
+    } else {
+      showCategoryDashboard(category);
+      window.history.pushState(null, "", `#categoria-${category}`);
+      dashboard?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 });
 
@@ -451,11 +502,15 @@ if (categoryContent[initialCategory]) {
   window.requestAnimationFrame(() => {
     dashboard?.scrollIntoView({ behavior: "auto", block: "start" });
   });
+} else {
+  closeCategoryDashboard();
 }
 
 window.addEventListener("hashchange", () => {
   const category = window.location.hash.replace("#categoria-", "");
   if (categoryContent[category]) {
     showCategoryDashboard(category);
+  } else {
+    closeCategoryDashboard();
   }
 });

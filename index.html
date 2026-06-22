@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=proceso-layout-20260622-v9" />
+    <link rel="stylesheet" href="styles.css?v=proceso-layout-20260622-v10" />
   </head>
   <body>
     <header class="site-header">
@@ -145,10 +145,10 @@
         </div>
       </section>
 
-      <section class="section category-dashboard theme-corporate" id="categoria-corporativo" data-active-category="corporativo">
+      <section class="section category-dashboard" id="categoria-dashboard" aria-hidden="true">
         <div class="container dashboard-grid">
           <div class="dashboard-main">
-            <a class="back-link" href="#categorias">Volver a categorías</a>
+            <button class="back-link close-dashboard-btn" type="button">Volver a todas las categorías</button>
             <p class="eyebrow dashboard-kicker">Línea de categoría</p>
             <h2 id="dashboard-title">Corporativo</h2>
             <p id="dashboard-copy">
@@ -197,6 +197,14 @@
           <div class="section-heading">
             <p class="eyebrow" id="gallery-kicker">Galeria</p>
             <h2 id="gallery-title">Espacio listo para tus trabajos reales.</h2>
+          </div>
+          <div class="gallery-filters" aria-label="Filtros de galería">
+            <button class="gallery-filter-btn is-active" type="button" data-filter="all">Ver todo</button>
+            <button class="gallery-filter-btn" type="button" data-filter="corporativo">Corporativo</button>
+            <button class="gallery-filter-btn" type="button" data-filter="deportivo">Deportivo</button>
+            <button class="gallery-filter-btn" type="button" data-filter="eventos">Eventos</button>
+            <button class="gallery-filter-btn" type="button" data-filter="personalizados">Regalos</button>
+            <button class="gallery-filter-btn" type="button" data-filter="geek">Geek</button>
           </div>
           <div class="gallery-grid">
             <div class="gallery-item tall"><span id="gallery-item-1">Medalla personalizada</span></div>
